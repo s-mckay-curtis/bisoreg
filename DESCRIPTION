@@ -1,7 +1,7 @@
 Package: bisoreg
 Type: Package
 Title: Bayesian Isotonic Regression with Bernstein Polynomials
-Version: 1.4
+Version: 1.5
 Date: 2015-03-15
 Author: S. McKay Curtis <s.mckay.curtis@gmail.com>
 Maintainer: S. McKay Curtis <s.mckay.curtis@gmail.com>
