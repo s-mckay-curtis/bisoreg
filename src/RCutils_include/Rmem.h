@@ -1,0 +1,9 @@
+double* R_Vector(int);
+double* R_VectorInit(int,double);
+//void R_FreeVector(double*,int);
+double** R_Matrix(int,int);
+double** R_MatrixInit(int,int,double);
+void R_FreeMatrix(double**,int,int);
+//void R_FreeMatrix(double**,int,int);
+double** R_Data2Matrix(double*,int,int);
+int** R_Data2iMatrix(int*,int,int);

@@ -1,0 +1,15 @@
+useDynLib(bisoreg)
+exportPattern("^[a-zA-Z]")
+import(
+    bootstrap,
+    R2WinBUGS,
+    monreg,
+    coda
+)
+S3method(as.mcmc, biso)
+S3method(fitted, biso)
+S3method(pflat, default)
+S3method(pflat, biso)
+S3method(plot, biso)
+S3method(print, biso)
+S3method(summary, biso)

@@ -1,0 +1,19 @@
+Changes to bisoreg 1.4
+
+* Minor changes to accommodate changes in coda package (Thanks to Martyn Plummer for the patch)
+
+
+Changes to bisoreg 1.3
+
+* Minor changes to documentation files.
+
+Changes to bisoreg 1.2
+
+* Fixed bug in function nd2004. Specifically, made the following changes:
+(remove)    gamma <- seq(0,1,l=M+1)
+(replace)    gamma <- seq(min(x),max(x),l=M+1)
+
+(Thanks to Michael Donohue.)
+
+
+

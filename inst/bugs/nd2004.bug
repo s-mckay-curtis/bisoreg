@@ -1,0 +1,21 @@
+model{
+  for (i in 1:n){
+    y[i] ~ dnorm(mu[i],isigsq)
+    mu[i] <- beta0 + inprod(W[i,],beta[])
+    }
+
+  beta0 ~ dnorm(0,0.001)
+  betastar[1] ~ dnorm(0,0.1)
+  beta[1] <- step(betastar[1]-delta)*betastar[1]
+  for (i in 2:M){
+    betastar[i] ~ dnorm(betastar[i-1],itausq)
+    beta[i] <- step(betastar[i]-delta)*betastar[i]
+    }
+
+  delta ~ dgamma(1.25,25)
+  a <- M/25.0
+  itausq ~ dgamma(a,1.0)
+  tausq <- 1.0/itausq
+  isigsq ~ dgamma(0.1,0.1)
+  sigsq <- 1.0/isigsq
+  }
