@@ -6,6 +6,11 @@ import(
     monreg,
     coda
 )
+importFrom("grDevices", "gray")
+importFrom("graphics", "lines", "plot", "points", "polygon")
+importFrom("stats", "dnorm", "fivenum", "loess", "median", "pbeta",
+           "predict", "quantile", "rbeta", "rbinom", "rgamma", "rnorm",
+           "var")
 S3method(as.mcmc, biso)
 S3method(fitted, biso)
 S3method(pflat, default)
