@@ -1,6 +1,7 @@
 Changes to bisoreg 1.5
 
 * Added warning to loess.wrapper to notify when cv fails (Thanks to Jan Stanstrup for the patch)
+* Removed hard coded package information in package Rd file.
 
 Changes to bisoreg 1.4
 

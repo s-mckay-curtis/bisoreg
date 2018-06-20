@@ -1,5 +1,6 @@
 \name{bisoreg}
 \alias{bisoreg}
+\alias{isogibbs}
 \title{
   Bayesian Isotonic Regression
 }
@@ -27,7 +28,7 @@ bisoreg(x, y, m = floor(n/2), priors = list(), inits = list(),
 }
 
 \details{
-  Generates MCMC draws from the posterior distribution of the nonparametric Bernstein regression function as described in Curtis and Ghosh (2009).
+  Generates MCMC draws from the posterior distribution of the nonparametric Bernstein regression function as described in Curtis and Ghosh (2009). The main computation is performed by the C function \code{isogibbs}.
 }
 
 \value{
@@ -45,7 +46,7 @@ bisoreg(x, y, m = floor(n/2), priors = list(), inits = list(),
 }
 
 \references{
-  Curtis, S. M. and Ghosh, S. K. (2009) "A variable selection approach to monotonic regression with Bernstein polynomials."
+  Curtis, S. M. and Ghosh, S. K. (2011). "A variable selection approach to monotonic regression with Bernstein polynomials."
 
   Gelman, A., et. al. (2003). \emph{Bayesian Data Analysis}. Chapman and Hall / CRC.
 

@@ -1,4 +1,4 @@
-useDynLib(bisoreg)
+useDynLib(bisoreg, .registration=TRUE)
 exportPattern("^[a-zA-Z]")
 import(
     bootstrap,
