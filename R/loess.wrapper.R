@@ -14,7 +14,28 @@
             mae[ii] <- mean(abs(y[fltr] - y.cv[fltr]))
         }
     }
-    span <- span.vals[which.min(mae)]
-    out <- loess(y ~ x, span=span)
+    
+    if(sum(!is.na(mae))==0) stop("crossval failed for all span values. No fit can be made.")
+    
+    # Choose the span with the lowest mae. Warn for spans with issues
+    for(i in order(mae)){
+        span <- span.vals[i]
+        out <- loess(y ~ x, span=span)
+
+        if(is.nan(out$s) | is.infinite(out$s)){ 
+            warning(paste0("Fit failed for span ", span, ". Likely because span is too small. Span step is ignored."), immediate.=TRUE)
+            next
+        }
+        
+        break
+    }
+    
+    # If no mae works choose the lowest mae and warn
+    if(is.nan(out$s) | is.infinite(out$s)){ 
+        span <- span.vals[which.min(mae)]
+        out <- loess(y ~ x, span=span)
+        warning("No span value gave a model that could be fitted. 'predict' will return input values.", immediate.=TRUE)
+    }
+    
     return(out)
 }
